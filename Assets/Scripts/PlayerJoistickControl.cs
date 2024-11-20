@@ -11,10 +11,8 @@ public class PlayerJoistickControl : MonoBehaviour
     {
         PlayerRigid = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        PlayerRigid.MovePosition(PlayerRigid.position + movement.normalized * PlayerSpeed * Time.fixedDeltaTime);
     }
 }
