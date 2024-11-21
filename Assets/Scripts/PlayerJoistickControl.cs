@@ -13,6 +13,8 @@ public class PlayerJoistickControl : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        PlayerRigid.MovePosition(PlayerRigid.position + movement.normalized * PlayerSpeed * Time.fixedDeltaTime);
+        Vector3 movement3D = new Vector3(movement.x, 0,movement.y);
+        PlayerRigid.MovePosition(PlayerRigid.position + movement3D.normalized * PlayerSpeed * Time.fixedDeltaTime);
     }
+
 }
